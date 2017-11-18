@@ -1,27 +1,23 @@
 #!/bin/bash
 
-apt remove vim vim-runtime gvim
-
-cd ~
-git clone https://github.com/vim/vim.git
+apt remove vim vim-runtime gvim -y
+apt update && apt install libncurses5-dev
+git clone https://github.com/vim/vim.git 
 cd vim
+
+make distclean 
 ./configure --with-features=huge \
             --enable-multibyte \
-            --enable-rubyinterp=yes \
             --enable-pythoninterp=yes \
-            --with-python-config-dir=/usr/lib/python2.7/config \
-            --enable-python3interp=yes \
-            --with-python3-config-dir=/usr/lib/python3.5/config \
+            --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
             --enable-perlinterp=yes \
-            --enable-luainterp=yes \
-            --enable-gui=gtk2 \
             --enable-cscope \
             --prefix=/usr/local
-make VIMRUNTIMEDIR=/usr/local/share/vim/vim80
-make install
+make && make install
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-cp ./vimrc ~/.vim/vimrc
+cd ..
+cp ./vimrc ~/.vimrc
 ln ~/.vimrc ~/.vim/vimrc
 vim +PluginInstall +qall
 
