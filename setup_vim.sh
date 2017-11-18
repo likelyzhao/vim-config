@@ -21,6 +21,8 @@ cp ./vimrc ~/.vimrc
 ln ~/.vimrc ~/.vim/vimrc
 vim +PluginInstall +qall
 
-echo "dont forget to install / update YoucompleteMe"
+cd ~/.vim/bundle/YouCompleteMe
+./install.py
+
 echo "https://github.com/j1z0/dotfiles.git"
 
