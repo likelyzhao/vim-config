@@ -42,6 +42,7 @@ Plugin 'powerline/powerline'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'jnurmine/Zenburn'
 
+Plugin 'scrooloose/nerdcommenter'
 call vundle#end()
 
 filetype plugin indent on    " enables filetype detection
