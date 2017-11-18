@@ -12,6 +12,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim' 
+Plugin 'vim-scripts/winmanager'
 
 "html
 "  isnowfy only compatible with python not python3
@@ -34,6 +35,9 @@ Plugin 'ervandew/supertab'
 ""code folding
 Plugin 'tmhedberg/SimpylFold'
 
+"powerline 
+
+Plugin 'powerline/powerline'
 "Colors!!!
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'jnurmine/Zenburn'
@@ -121,6 +125,25 @@ autocmd FileType python set foldmethod=indent
 "use space to open folds
 nnoremap <space> za 
 "----------Stop python PEP 8 stuff--------------
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Config Winmanager
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:winManagerWindowLayout="FileExplorer|TagList"
+let g:persistentBehaviour=0 
+nmap wm :WMToggle<CR>
+
+set guifont=Sauce\ Code\ Powerline:h14.5  
+set laststatus=2  
+set encoding=utf-8  
+set t_Co=256  
+set number  
+set fillchars+=stl:\ ,stlnc:\  
+set term=xterm-256color  
+set termencoding=utf-8  
+set background=light  
+
 
 "js stuff"
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
